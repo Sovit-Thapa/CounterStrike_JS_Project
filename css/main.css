@@ -1,0 +1,463 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.gun-item {
+    border: 2px solid #4e4949;
+    padding: 10px;
+}
+
+.character-item {
+    border: 2px solid red;
+    padding: 10px; 
+}
+
+
+#start-screen {
+    text-align: center;
+    color: #fff;
+    position: relative; 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#start-screen img {
+    max-width: 100%; 
+    margin-bottom: 20px; 
+}
+
+#start-screen .logo {
+    width: 50%;
+    max-width: 500px; 
+}
+
+#start-screen .background {
+    width: 100%; 
+    height: 100%; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; 
+    object-fit: cover;
+}
+
+#start-screen button {
+    background-color: #ff0000; 
+    color: #fff; 
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+#start-screen button:hover {
+    background-color: #cc0000; 
+}
+
+#team-selection-screen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #000; 
+    color: #fff; 
+}
+
+#team-selection-screen h2 {
+    margin-bottom: 20px;
+    text-align: center;
+    margin-left: 30px;
+}
+
+#team-selection-screen table {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    border-collapse: collapse;
+}
+
+#team-selection-screen td {
+    padding: 10px;
+    text-align: center;
+}
+
+.character-item {
+    width: 200px; 
+    height: 300px; 
+    margin: 20px; 
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    box-sizing: border-box; 
+    overflow: hidden; 
+    text-align: center; 
+    background-color: #f9f9f9; 
+    transition: all 0.3s ease; 
+}
+
+
+
+#team-selection-screen button {
+    background: linear-gradient(to right, #ff0000, #cc0000); 
+    color: #fff; 
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background 0.3s ease; 
+    width: 100%; 
+    border-radius: 5px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+#team-selection-screen button:hover {
+    background: linear-gradient(to right, #cc0000, #ff0000); 
+}
+
+#characterView{
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    height: 80vh;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    padding: 10%;
+    border-radius: 10px;
+    margin-right: 2px;
+    margin-left: 1%;
+}
+.small-container {
+    align-items: center;
+    width: 120%;
+    height: 150px;
+    background-color: #ffffff;
+    margin-top: 20%;
+    margin-left: 15%;
+    margin-right: 8%;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    border: 2px solid #333; 
+}
+
+#weapon-selection-screen{
+    padding-bottom: 10%;
+    padding-left: 10%;
+    position: fixed;
+    height: 100vh;
+    padding-bottom: 10%;
+    padding-top: 10%;
+}
+
+#listed-weapons{
+    background-color: white;
+    width: 80%; 
+    height: 70vh;
+    border: 2px solid black;
+    margin-left: 5%;
+    margin-right: 5%;
+    overflow: auto;
+}
+
+#proceedToOverview {
+    height: 50px;
+    margin-top: 1%;
+    margin-bottom: 5%;
+    margin-left: 40%;
+    padding: 10px 20px; 
+    background-color: blue; 
+    color: white; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+}
+
+#subName{
+    background-color: blue; 
+        color: #fff; 
+        border: none;
+        padding: 5px 10px;
+        margin-left: 2%;
+        font-size: 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        border-radius: 5px;
+}
+
+#subName:hover{
+    background-color: #c43030; 
+}
+
+#subTeam {
+    background-color: blue; 
+    color: #fff; 
+    border: none;
+    padding: 5px 10px;
+    margin-left: 2%;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5px;
+}
+
+#subTeam:hover{
+    background-color: #c43030; 
+}
+
+#proceedToOverview:hover {
+    background-color: #c43030; 
+}
+
+@keyframes moveText {
+    0% { transform: translateX(0); }
+    50% { transform: translateX(30%); } 
+    100% { transform: translateX(0); }
+}
+
+#animated-text {
+    margin-top: 15%;
+    color: rgb(171, 20, 20);
+    font-size: 40px;
+    display: inline-block;
+    width: 80%;
+    animation: moveText 4s linear infinite; 
+}
+
+
+
+#weapon-categories{
+    display: flex; 
+    flex-direction: column;
+     justify-content: space-around;
+     height: 70vh;
+}
+
+#smgImage,
+#knivesImage,
+#pistolsImage,
+#heavyImage,
+#glovesImage,
+#riflesImage{
+    height: 100px;
+    margin: 8%;
+}
+
+.small-container:hover{
+    transform: scale(1.3);
+}
+
+.container:hover{
+    transform: scale(1.1);
+}
+
+#hoverText{
+    opacity: 0;
+    overflow: auto;
+    margin-top: -53%;
+    margin-left: 30%;
+}
+
+.small-container:hover #hoverText{
+    opacity: 1;
+}
+
+.small-container:hover img{
+    opacity: 0.2;
+}
+
+#right{
+    padding-top: 2% ;
+}
+
+#right .small-container{
+    width: 120%;
+    margin-bottom: 30%;
+    margin-left: -40%;
+    margin-top: 5%;
+    margin-right: 5%;
+}
+
+
+
+#hoverKnivesText,
+#hoverPistolsText,
+#hoverGlovesText,
+#hoverSmgsText,
+#hoverRiflesText,
+#hoverHeavyText{
+    margin: 10%;
+    opacity: 0;
+}
+
+.small-container:hover #hoverKnivesText{
+    opacity: 1;
+}
+
+.small-container:hover #hoverPistolsText{
+    opacity: 1;
+}
+.small-container:hover #hoverGlovesText{
+    opacity: 1;
+}
+
+.small-container:hover #hoverRiflesText{
+    opacity: 1;
+}
+.small-container:hover #hoverSmgsText{
+    opacity: 1;
+}
+.small-container:hover #hoverHeavyText{
+    opacity: 1;
+}
+
+
+
+#teamOverviewScreen {
+    background-color: white;
+    margin: 3%;
+    margin-top: 1%;
+    padding: 20px; 
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh; 
+}
+
+#team-overview-screen {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+#leftTeam,
+#rightTeam{
+    width: 100%;
+    padding: 5%;
+}
+
+.teamMembercontainer {
+    width: 100%;
+    height: 40vh; 
+    margin-bottom: 10px; 
+    border: 1px solid #000; 
+    display: flex;
+    flex-direction: row;
+    
+}
+
+#leftSpace{
+    width: 17%;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#left1,
+#left2,
+#left3{
+    width: 100%;
+    height: 10vh;
+    border: 2px solid black;
+}
+
+#centerSpace{
+    width: 66%;
+    border: 1px solid black;
+}
+
+#rightSpace{
+    width: 17%;
+    margin: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#right1,
+#right2,
+#right3{
+    width: 100%;
+    height: 10vh;
+    border: 2px solid black;
+}
+
+#char1,
+#char2,
+#char3,
+#char4{
+    height: 220px;
+}
+
+#leftSpace img,
+#rightSpace img{
+    height: 60px;
+    margin: 3%;
+}
+
+#team{
+    color: white;
+    margin-left: 3%;
+}
+
+#leftSpace p,
+#rightSpace p{
+    opacity: 0;
+    margin-top: -50%;
+    font-size: 12px;
+}
+
+
+
+#left1:hover p,
+#left2:hover p,
+#left3:hover p,
+#right1:hover p,
+#right2:hover p,
+#right3:hover p {
+    opacity: 1;
+}
+
+#left1:hover img,
+#left2:hover img,
+#left3:hover img,
+#right1:hover img,
+#right2:hover img,
+#right3:hover img {
+    opacity: 0.2;
+}
+
+#centerSpace {
+    transition: transform 1s; 
+}
+
+#centerSpace:hover {
+    transform: rotate(360deg);
+}

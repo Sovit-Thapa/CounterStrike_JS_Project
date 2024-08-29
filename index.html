@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Strike: Team Builder</title>
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+    <div id="start-screen">
+        <img class="logo" src="./assets/logo.jpeg" alt="logo">
+        <img class="background" src="./assets/background.png" alt="background">
+        <button id="start-game">Start Game</button>
+    </div>
+
+    <div id="team-selection-screen" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); z-index: 9999;">
+        <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center;">
+            <h2 style="font-size: 40px;">Select Team</h2>
+            <table style="margin: 5%;">
+                <tr>
+                    <td><button id="terrorist">Terrorist</button></td>
+                </tr>
+                <tr>
+                    <td><button id="counter-terrorist">Counter Terrorist</button></td>
+                </tr>
+                <tr>
+                    <td><button id="auto-select">Auto Select</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <div id="character-selection-screen" style="display: none;">
+    <h2  style="color: white; margin-bottom: 30px; font-size: 30px; margin-left: 30px;">Choose your character: <span id="chooseYourCharacter"></span></h2>
+    <div id="character-options" style="margin: auto; margin-bottom: 0%; overflow: auto; background-color: white; height: 70vh; width: 90%; padding-left: 5%; padding-top: 2%; padding-bottom: 2%;">
+    </div>
+    <form id="character-name-form" style="margin-top: 0.5%; margin-left: 3%;">
+        <label for="character-name" style="
+            color: white; font-size: 25px; padding-right: 0.5%;">Name your character:</label>
+        <input type="text" id="character-name" name="character-name" maxlength="20" style="height: 40px; width: 300px; padding-right: 5%;" required>
+        <button id="subName" type="submit">Submit</button>
+    </form>
+</div>
+
+<div id="weapon-selection-screen" style="display: none; width: 100%;">
+    <h1 id ="balance" style="color: white;">Choose Weapons and Gears<br>Balance: <h2 id="actualBalance" style="color: white;"></h2> </h1>
+    <div style="display: flex; flex-direction: row; width: 100%;">
+        <div id="weapon-categories">
+            <button id="pistols" style="padding: 5px; width: 140px; height: 50px; margin: 2%;">Pistols</button>
+            <button id="heavy" style="padding: 5px; width: 140px; height: 50px; margin: 2%;">Heavy</button>
+            <button id="smgs" style="padding: 5px; width: 140px; height: 50px; margin: 2%;">SMGs</button>
+            <button id="rifles" style="padding: 5px; width: 140px; height: 50px; margin: 2%;">Rifles</button>
+            <button id="knives" style="padding: 5px; width: 140px; height: 50px; margin: 2%;">Knives</button>
+            <button id="gloves" style="padding: 5px; width: 140px; height: 50px; margin: 2%;">Gloves</button>
+            
+
+        </div>
+        <div style="width: 100%;">
+            <div id="listed-weapons"style="">
+                <p id="animated-text" style="color: rgb(97, 30, 30);font-size: 80px;">Select your weapon !!</p>
+            </div>
+            <button id="proceedToOverview">Proceed to overview</button>
+        </div>
+        
+            
+    </div>
+   
+</div>
+
+
+    
+    <div id="character-overview-screen" style="display: none; width: 100%;">
+        <div id="characterView" style="background-color: #fff; width: 60%;">
+            <div id="left">
+                <div class="small-container">
+                    <img id="knivesImage" ><h1 id="hoverText">Knives</h1><P id="hoverKnivesText"></P></div>
+                <div class="small-container"><img id="pistolsImage"><h1 id="hoverText">Pistols</h1><p id="hoverPistolsText"></p></div>
+                <div class="small-container"><img id="glovesImage"><h1 id="hoverText">Gloves</h1><p id="hoverGlovesText"></p></div>
+               </div> 
+              
+                <div class="container">
+                    <img id="chracterPhoto" src="" style="height: 250px;">
+                    <h1 id="myCharacterName" ></h1>
+                </div>
+                <div id="right">
+                    <div class="small-container"><img id="smgImage"><h1 id="hoverText">Smgs</h1><p id="hoverSmgsText"></p></div>
+                    <div class="small-container"><img id="riflesImage"><h1 id="hoverText">Rifles</h1><p id="hoverRiflesText"></p></div>
+                    <div class="small-container"><img id="heavyImage"><h1 id="hoverText">Heavy</h1><p id="hoverHeavyText"></p></div>
+                </div>
+      
+        
+        </div>
+        <div>
+            <form id="team-name-form" style="margin-top: 2%; margin-left: 26%;">
+                <label for="team-name" style="
+                    color: white; font-size: 25px; padding-right: 0.5%;">Name your team:</label>
+                <input type="text" id="team-name" name="team-name" maxlength="20" style="height: 40px; width: 300px; padding-right: 5%;" required>
+                <button id="subTeam" type="submit">Submit</button>
+            </form>
+           </div>
+    </div>
+        
+
+
+    </div>
+    <div id="team-overview-screen" style="display: none;">
+        <div><h1 id="team">Team Name: </h1></div>
+        <div id="teamOverviewScreen">
+        <div id="leftTeam" style="display: flex; flex-direction: column;">
+          
+            <div>
+                <div class="teamMembercontainer">
+                    <div id="leftSpace"> 
+                         <div id="left1"><img id="knives1"><p id="knives1Hover"></p></div>
+                         <div id="left2"><img id="pistols1"><p id="pistols1Hover"></p></div>
+                         <div id="left3"><img id="gloves1"><p id="gloves1Hover"></p></div>
+                    </div>
+                    <div id="centerSpace">
+                        <img id="char1" src="">
+                        <h2 id="char1Name"></h2>
+                    </div>
+                    <div id="rightSpace">
+                        <div id="right1"><img id="smgs1"><p id="smgs1Hover"></p></div>
+                        <div id="right2"><img id="rifles1"><p id="rifles1Hover"></p></div>
+                        <div id="right3"><img id="heavy1"><p id="Heavy1Hover"></p></div>
+                    </div>
+                </div>
+                <div class="teamMembercontainer">
+                    <div id="leftSpace"> 
+                        <div id="left1"><img id="knives2"><p id="knives2Hover"></p></div>
+                         <div id="left2"><img id="pistols2"><p id="pistols2Hover"></p></div>
+                         <div id="left3"><img id="gloves2"><p id="gloves2Hover"></p></div>
+                    </div>
+                    <div id="centerSpace">
+                        <img id="char2" src="">
+                        <h2 id="char2Name">character2</h2>
+                    </div>
+                    <div id="rightSpace">
+                        <div id="right1"><img id="smgs2"><p id="smgs2Hover"></p></div>
+                        <div id="right2"><img id="rifles2"><p id="rifles2Hover"></p></div>
+                        <div id="right3"><img id="heavy2"><p id="Heavy2Hover"></p></div>
+                    </div>
+                </div>
+
+            </div>
+          
+        </div>
+       <div id="rightTeam" style="display: flex; flex-direction: column;">
+        <div class="teamMembercontainer">
+            <div id="leftSpace"> 
+                <div id="left1"><img id="knives3"><p id="knives3Hover"></p></div>
+                <div id="left2"><img id="pistols3"><p id="pistols3Hover"></p></div>
+                <div id="left3"><img id="gloves3"><p id="gloves3Hover"></p></div>   
+            </div>
+            <div id="centerSpace">
+                <img id="char3" src="">
+                <h2 id="char3Name">Character3</h2>
+            </div>
+            <div id="rightSpace">
+                <div id="right1"><img id="smgs3"><p id="smgs3Hover"></p></div>
+                <div id="right2"><img id="rifles3"><p id="rifles3Hover"></p></div>
+                <div id="right3"><img id="heavy3"><p id="Heavy3Hover"></p></div>
+            </div>
+        </div>
+        <div class="teamMembercontainer">
+            <div id="leftSpace"> 
+                <div id="left1"><img id="knives4"><p id="knives4Hover"></p></div>
+                <div id="left2"><img id="pistols4"><p id="pistols4Hover"></p></div>
+                <div id="left3"><img id="gloves4"><p id="gloves4Hover"></p></div>    
+            </div>
+            <div id="centerSpace">
+                <img id="char4" src="">
+                <h2 id="char4Name">Character4</h2>
+            </div>
+            <div id="rightSpace">
+                <div id="right1"><img id="smgs4"><p id="smgs4Hover"></p></div>
+                <div id="right2"><img id="rifles4"><p id="rifles4Hover"></p></div>
+                <div id="right3"><img id="heavy4"><p id="Heavy4Hover"></p></div>
+            </div>
+        </div>
+       </div>
+        
+        </div>
+        
+    </div>
+    <script src="https://cdn.polyfill.io/v2/polyfill.js?features=es6"></script>
+    <script src="./js/main.js"></script>
+    
+</body>
+</html>
